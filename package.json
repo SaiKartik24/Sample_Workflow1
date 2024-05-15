@@ -2,7 +2,7 @@
   "name": "sample_workflow1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha ./test/* --exit",
     "start": "node app.js",
@@ -14,6 +14,9 @@
   "dependencies": {
     "express": "^4.19.2",
     "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   },
   "devDependencies": {
     "mocha": "^10.4.0",
