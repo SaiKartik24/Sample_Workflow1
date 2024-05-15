@@ -18,5 +18,8 @@
   "devDependencies": {
     "mocha": "^10.4.0",
     "supertest": "^7.0.0"
-  }
+  },
+  "browser": {
+    "fs": false
+}
 }
