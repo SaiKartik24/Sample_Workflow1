@@ -25,3 +25,16 @@ jobs:
 
       - name: Push to DockerHub
         run: docker push saikartik240/node_workflow
+  deploy:
+      needs: build
+      runs-on: self-hosted
+  
+      steps:
+        - name: Pull Docker Image
+          run: sudo docker pull saikartik240/node_workflow:latest
+  
+        - name: Delete old Docker container 
+          run: sudo docker rm -f nodeApp-container || true 
+  
+        - name: Run Docker Container
+          run: sudo docker run -d -p 3000:8000 --name nodeApp-container saikartik240/node_workflow
