@@ -31,29 +31,10 @@ jobs:
     runs-on: self-hosted
     
     steps:
-      - name: Install Docker
-        run: |
-          if ! command -v docker &> /dev/null
-          then
-            echo "Docker not found, installing..."
-            curl -fsSL https://get.docker.com -o get-docker.sh
-            sudo sh get-docker.sh
-            sudo usermod -aG docker $USER
-            newgrp docker
-          else
-            echo "Docker is already installed"
-          fi
-
-      - name: Check Docker Daemon
-        run: sudo systemctl status docker
-
-      - name: Verify DockerHub Login
-        run: docker info | grep -i username
-
       - name: Pull Docker Image
         run: |
           echo "Pulling Docker image: saikartik240/node_workflow"
-          sudo docker pull saikartik240/node_workflow
+          docker pull saikartik240/node_workflow:latest
 
       - name: Check Docker Images
         run: sudo docker images
