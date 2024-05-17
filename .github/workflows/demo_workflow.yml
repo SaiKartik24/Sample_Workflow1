@@ -31,10 +31,10 @@ jobs:
   
       steps:
         - name: Pull Docker Image
-          run: sudo docker pull saikartik240/node_workflow:latest
+          run: sudo docker pull saikartik240/node_workflow
   
         - name: Delete old Docker container 
           run: sudo docker rm -f node_workflow-container || true 
   
         - name: Run Docker Container
-          run: sudo docker run -d -p 3000:8000 --name node_workflow-container saikartik240/node_workflow
+          run: sudo docker run -d -p 8000:8000 --name node_workflow-container saikartik240/node_workflow
