@@ -34,7 +34,7 @@ jobs:
       - name: Pull Docker Image
         run: |
           echo "Pulling Docker image: saikartik240/node_workflow"
-          sudo docker pull saikartik240/node_workflow:latest
+          docker pull saikartik240/node_workflow:latest
 
       - name: Check Docker Images
         run: sudo docker images
