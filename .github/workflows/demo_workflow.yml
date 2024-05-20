@@ -6,7 +6,7 @@ on:
       - main
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
-  RUN_REGION: us-east1
+  RUN_REGION: us-central1
   SA_KEY_JSON: ${{ secrets.RUN_SA_KEY }}
 jobs:
   deploy:
