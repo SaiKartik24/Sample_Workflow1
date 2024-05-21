@@ -22,13 +22,13 @@ jobs:
       run: npm install
 
     - name: Build Docker image
-      run: docker build -t saikartik240/node_workflow:$GITHUB_SHA .
+      run: docker build -t saikartik240/node-gcp-app:$GITHUB_SHA .
 
     - name: Log in to Docker Hub
       run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
     - name: Push Docker image to Docker Hub
-      run: docker push saikartik240/node_workflow:$GITHUB_SHA
+      run: docker push saikartik240/node-gcp-app:$GITHUB_SHA
 
     - name: Authenticate with GCP
       uses: google-github-actions/auth@v2
@@ -37,8 +37,8 @@ jobs:
 
     - name: Deploy to Cloud Run
       run: |
-        gcloud run deploy node_workflow \
-          --image saikartik240/node_workflow:$GITHUB_SHA \
+        gcloud run deploy node-gcp-app \
+          --image saikartik240/node-gcp-app:$GITHUB_SHA \
           --platform managed \
           --region ${{ secrets.GCP_REGION }} \
           --allow-unauthenticated
