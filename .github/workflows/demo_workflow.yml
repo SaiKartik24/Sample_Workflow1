@@ -31,7 +31,7 @@ jobs:
       run: docker push saikartik240/node_workflow:$GITHUB_SHA
 
     - name: Authenticate with GCP
-      uses: google-github-actions/auth@v0
+      uses: google-github-actions/auth@v2
       with:
         credentials_json: ${{ secrets.RUN_SA_KEY }}
 
