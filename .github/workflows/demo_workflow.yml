@@ -37,7 +37,7 @@ jobs:
 
     - name: Deploy to Cloud Run
       run: |
-        gcloud run deploy node-gcp-app \
+        gcloud run deploy node_workflow \
           --image saikartik240/node_workflow:$GITHUB_SHA \
           --platform managed \
           --region ${{ secrets.GCP_REGION }} \
