@@ -16,7 +16,7 @@ app.get('/showDate', (req, res) => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My HTML Template</title>
+        <title>My HTML Template for test</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
